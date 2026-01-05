@@ -24,16 +24,16 @@ export default function Projects() {
       codeUrl: "#",
       imageSrc: "/images/company-services/complaint-details.png",
     },
-    {
-      id: "enigmatika",
-      title: "Capstone Project: Enigmatika – 3D Mystery Adventure Game for Reading Comprehension",
+       {
+      id: "mern-ticketing",
+      title: "MERN Ticketing Platform – GitLab CI/CD & AWS Deployment",
       description:
-        "A 3D mystery adventure mobile game designed to practice reading comprehension through interactive puzzles, NPC interactions, and dynamic storytelling. Developed in Unity3D.",
-      date: "May 2025",
-      techStack: ["Unity3D", "Blender", "Mixamo", "Adobe Photoshop"],
+        "A production-style MERN Ticketing System designed to simulate a real-world support and issue-tracking platform. It allows users to create and manage tickets while agents handle assignment, communication, and resolution through a structured workflow. The application is built with TypeScript, containerized using Docker, and deployed via GitLab CI/CD to AWS EC2.",
+      date: "Nov 2025",
+      techStack: ["MongoDB", "Express", "React", "Node.js", "Docker", "GitLab CI/CD", "AWS"],
       demoUrl: "#",
       codeUrl: "#",
-      imageSrc: "/images/enigmatika/main-menu.png",
+      imageSrc: "/images/mern-ticketing/landing-page.png",
     },
     {
       id: "repmind",
@@ -45,6 +45,17 @@ export default function Projects() {
       demoUrl: "#",
       codeUrl: "#",
       imageSrc: "/images/conversational-ai.png",
+    },
+    {
+      id: "enigmatika",
+      title: "Capstone Project: Enigmatika – 3D Mystery Adventure Game for Reading Comprehension",
+      description:
+        "A 3D mystery adventure mobile game designed to practice reading comprehension through interactive puzzles, NPC interactions, and dynamic storytelling. Developed in Unity3D.",
+      date: "May 2025",
+      techStack: ["Unity3D", "Blender", "Mixamo", "Adobe Photoshop"],
+      demoUrl: "#",
+      codeUrl: "#",
+      imageSrc: "/images/enigmatika/main-menu.png",
     },
     {
       id: "movie-sentiment-classifier",
