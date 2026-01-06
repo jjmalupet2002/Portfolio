@@ -575,7 +575,7 @@ const projectsData = [
     longDescription:
       "SpaceX Launch Explorer is a sophisticated web application built with Nuxt 3 and Vue 3 that provides real-time access to SpaceX mission data through the public GraphQL API. The application showcases advanced frontend architecture patterns including server-side rendering, hybrid rendering optimization, and sophisticated state management using Pinia.\n\nThe immersive UI is built with Vuetify 3, providing a sleek material design interface with custom theming and responsive layouts that adapt fluidly across devices. Users can explore comprehensive mission details, compare rocket specifications, filter launches by year or mission name, and bookmark their favorite missions.\n\nThe architecture emphasizes performance optimization through Vite's rapid bundling and Nuxt 3's hybrid rendering capabilities, ensuring sub-second interaction latency and high frame rates during scroll and animation events. The Apollo Client GraphQL integration enables efficient data fetching with built-in caching, while Pinia stores manage complex application state with fine-grained reactivity.\n\nThe project demonstrates best practices in modern Vue 3 development including composables for logic reuse, TypeScript for type safety, and comprehensive error handling for graceful degradation when API calls fail.",
     videoUrl: "https://youtu.be/oOecBPA6JKk",
-    githubUrl: "https://github.com/josef/spacex-launch-explorer",
+    githubUrl: "https://github.com/jjmalupet2002/SpaceX-GraphQL-NuxtJS-Exam",
     webAppUrl: "https://space-x-graph-ql-nuxt-js-exam-omt7.vercel.app/",
     stack: [
       "Nuxt 3",
