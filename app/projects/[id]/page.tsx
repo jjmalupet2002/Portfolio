@@ -635,7 +635,6 @@ const projectsData = [
         title: "Data Visualization",
         description: "Dynamic charts and metrics displaying rocket performance and mission statistics",
       },
-      // Removed the duplicate feature entry for "Advanced State Management"
     ],
     date: "Jan 2025",
   },
@@ -912,17 +911,33 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
           </div>
 
           {/* Video Section */}
-          <div className="bg-gray-900/30 backdrop-blur-sm border border-gray-800/50 rounded-xl overflow-hidden">
-            <div className="aspect-video w-full">
-              <iframe
-                src={`https://www.youtube.com/embed/${project.videoUrl.split("youtu.be/")[1]}`}
-                title={project.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              ></iframe>
+          {/* CHANGE: Replace YouTube video with first gallery image for all projects except enigmatika (capstone) */}
+          {project.id === "enigmatika" ? (
+            <div className="bg-gray-900/30 backdrop-blur-sm border border-gray-800/50 rounded-xl overflow-hidden">
+              <div className="aspect-video w-full">
+                <iframe
+                  src={`https://www.youtube.com/embed/${project.videoUrl.split("youtu.be/")[1]}`}
+                  title={project.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="bg-gray-900/30 backdrop-blur-sm border border-gray-800/50 rounded-xl overflow-hidden">
+              <div className="relative aspect-video w-full bg-gray-800/50 overflow-hidden">
+                <Image
+                  src={project.gallery?.[0] || "/placeholder.svg"}
+                  alt={project.galleryDescriptions?.[0] || `${project.title} - Featured image`}
+                  width={1200}
+                  height={675}
+                  className="w-full h-full object-contain"
+                  priority
+                />
+              </div>
+            </div>
+          )}
 
           {/* Project Description */}
           <div className="bg-gray-900/30 backdrop-blur-sm border border-gray-800/50 rounded-xl p-6">
