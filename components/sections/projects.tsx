@@ -24,12 +24,12 @@ export default function Projects() {
       codeUrl: "#",
       imageSrc: "/images/company-services/complaint-details.png",
     },
-       {
+    {
       id: "mern-ticketing",
       title: "MERN Ticketing Platform – GitLab CI/CD & AWS Deployment",
       description:
         "A production-style MERN Ticketing System designed to simulate a real-world support and issue-tracking platform. It allows users to create and manage tickets while agents handle assignment, communication, and resolution through a structured workflow. The application is built with TypeScript, containerized using Docker, and deployed via GitLab CI/CD to AWS EC2.",
-      date: "Nov 2025",
+      date: "Dec 2025",
       techStack: ["MongoDB", "Express", "React", "Node.js", "Docker", "GitLab CI/CD", "AWS"],
       demoUrl: "#",
       codeUrl: "#",
@@ -45,6 +45,17 @@ export default function Projects() {
       demoUrl: "#",
       codeUrl: "#",
       imageSrc: "/images/conversational-ai.png",
+    },
+     {
+      id: "spacex-explorer",
+      title: "SpaceX Launch Explorer (Nuxt4) – Real-time GraphQL Data Visualization",
+      description:
+        "A high-performance, immersive web application that connects to the SpaceX GraphQL API to visualize mission data, rocket specifications, and launch history. Designed with a focus on modern web standards and user experience, this project demonstrates real-time data integration and interactive state management.",
+      date: "Nov 2025",
+      techStack: ["Nuxt 3", "Vue 3", "TypeScript", "Vuetify 3", "Apollo Client", "GraphQL", "Pinia"],
+      demoUrl: "#",
+      codeUrl: "#",
+      imageSrc: "/images/spacex-explorer/home-page.jpg",
     },
     {
       id: "enigmatika",

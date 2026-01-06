@@ -37,6 +37,7 @@ import {
   Terminal,
   Eye,
   Upload,
+  Search,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -487,6 +488,7 @@ const projectsData = [
       "This project is a production-style MERN Ticketing System designed to simulate a real-world support and issue-tracking platform. It allows users to create and manage tickets while agents handle assignment, communication, and resolution through a structured workflow. The application is built with TypeScript, containerized using Docker, and deployed via GitLab CI/CD to AWS EC2, following DevOps best practices such as immutable production containers, environment-based configuration, and automated deployments. The goal of the project is not only functional correctness, but also to demonstrate end-to-end system design, deployment, and operational readiness.\n\nThe system implements role-based access control to ensure secure interactions between users, agents, and administrators. Users can easily create tickets with attachments, track their progress, and engage in threaded conversations with assigned agents. Agents are provided with a specialized control center to claim unassigned tickets, manage their active workload, and access internal resources like SOPs and tech manuals.\n\nFrom a technical perspective, the backend is a RESTful API built with Node.js and Express, utilizing MongoDB for data storage with indexed queries for performance. The frontend is a responsive React application using Redux Toolkit for state management and TypeScript for type safety. The infrastructure is fully automated, with a GitLab CI/CD pipeline handling the build, test, and deployment phases, ensuring that any changes are reliably pushed to the AWS EC2 production environment.",
     videoUrl: "https://youtu.be/oOecBPA6JKk",
     githubUrl: "https://github.com/jjmalupet2002/MERN-Ticketing-System-AWS-Gitlab-Docker",
+    webAppUrl: "https://mern-ticketing-system-aws-gitlab-do.vercel.app/",
     stack: [
       "MongoDB",
       "Express",
@@ -563,6 +565,79 @@ const projectsData = [
       },
     ],
     date: "Nov 2025",
+  },
+  // SpaceX Explorer Update
+  {
+    id: "spacex-explorer",
+    title: "SpaceX Launch Explorer – Real-time GraphQL Data Visualization",
+    description:
+      "A high-performance, immersive web application that connects to the SpaceX GraphQL API to visualize mission data, rocket specifications, and launch history. Designed with a focus on modern web standards and user experience, this project demonstrates real-time data integration and interactive state management.",
+    longDescription:
+      "SpaceX Launch Explorer is a sophisticated web application built with Nuxt 3 and Vue 3 that provides real-time access to SpaceX mission data through the public GraphQL API. The application showcases advanced frontend architecture patterns including server-side rendering, hybrid rendering optimization, and sophisticated state management using Pinia.\n\nThe immersive UI is built with Vuetify 3, providing a sleek material design interface with custom theming and responsive layouts that adapt fluidly across devices. Users can explore comprehensive mission details, compare rocket specifications, filter launches by year or mission name, and bookmark their favorite missions.\n\nThe architecture emphasizes performance optimization through Vite's rapid bundling and Nuxt 3's hybrid rendering capabilities, ensuring sub-second interaction latency and high frame rates during scroll and animation events. The Apollo Client GraphQL integration enables efficient data fetching with built-in caching, while Pinia stores manage complex application state with fine-grained reactivity.\n\nThe project demonstrates best practices in modern Vue 3 development including composables for logic reuse, TypeScript for type safety, and comprehensive error handling for graceful degradation when API calls fail.",
+    videoUrl: "https://youtu.be/oOecBPA6JKk",
+    githubUrl: "https://github.com/josef/spacex-launch-explorer",
+    webAppUrl: "https://space-x-graph-ql-nuxt-js-exam-omt7.vercel.app/",
+    stack: [
+      "Nuxt 3",
+      "Vue 3",
+      "TypeScript",
+      "Vuetify 3",
+      "Apollo Client",
+      "GraphQL",
+      "Pinia",
+      "Vite",
+      "ESLint",
+      "Prettier",
+    ],
+    clientImage: "/spacex-logo.jpg",
+    clientName: "Personal Project",
+    gallery: [
+      "/images/spacex-explorer/home-page.jpg",
+      "/images/spacex-explorer/featured-launches.jpg",
+      "/images/spacex-explorer/launches-page.jpg",
+      "/images/spacex-explorer/launch-details.jpg",
+      "/images/spacex-explorer/compare-rockets.jpg",
+      "/images/spacex-explorer/rockets-list.jpg",
+      "/images/spacex-explorer/favorites.jpg",
+    ],
+    galleryDescriptions: [
+      "Home Page - Immersive landing page with hero title and interactive navigation buttons for exploring launches and rockets",
+      "Featured Launches - Carousel showcasing high-profile SpaceX missions with quick details and interactive cards",
+      "Launches Page - Advanced filtering and search interface with sorting options for browsing all SpaceX launches",
+      "Launch Details - Comprehensive mission view showing detailed specifications, images, and mission descriptions",
+      "Rocket Comparator - Side-by-side comparison tool for analyzing multiple rockets with performance metrics and mass specifications",
+      "Rockets List - Grid view of all SpaceX rockets including Starship, Falcon Heavy, Falcon 9, and Falcon 1",
+      "My Favorites - Personalized page for bookmarked launches and missions with filtering and sorting capabilities",
+    ],
+    features: [
+      {
+        icon: <Code className="h-6 w-6" />,
+        title: "Real-time GraphQL Integration",
+        description: "Seamless connection to SpaceX API for live mission data, rocket specs, and launch history",
+      },
+      {
+        icon: <Smartphone className="h-6 w-6" />,
+        title: "Immersive UI with Vuetify 3",
+        description: "Sleek material design interface with custom theming and responsive layouts",
+      },
+      {
+        icon: <Zap className="h-6 w-6" />,
+        title: "Performance Optimization",
+        description: "Vite bundling and Nuxt 3 hybrid rendering for sub-second interaction latency",
+      },
+      {
+        icon: <Search className="h-6 w-6" />,
+        title: "Interactive Filtering & Search",
+        description: "Client-side filtering and search powered by Pinia stores for instant UI updates",
+      },
+      {
+        icon: <TrendingUp className="h-6 w-6" />,
+        title: "Data Visualization",
+        description: "Dynamic charts and metrics displaying rocket performance and mission statistics",
+      },
+      // Removed the duplicate feature entry for "Advanced State Management"
+    ],
+    date: "Jan 2025",
   },
 ]
 
@@ -931,7 +1006,9 @@ export default function ProjectDetail({ params }: { params: { id: string } }) {
                         ? "This machine learning project was developed as part of academic coursework, demonstrating proficiency in natural language processing, supervised learning, and software quality assurance practices. The project showcases the application of industry-standard ML techniques to real-world text classification problems."
                         : project.id === "healhub-pentest"
                           ? "This ethical hacking project was conducted as part of cybersecurity coursework, demonstrating practical penetration testing skills and vulnerability assessment techniques. The project showcases responsible disclosure practices and the importance of secure coding in web application development."
-                          : `This project was developed for ${project.clientName}, showcasing our ability to deliver high-quality solutions tailored to specific client needs.`}
+                          : project.id === "spacex-explorer"
+                            ? "This personal project showcases the development of a high-performance, real-time web application using Nuxt 3 and Vue 3, demonstrating expertise in modern frontend architectures, GraphQL integration, and immersive UI design."
+                            : `This project was developed for ${project.clientName}, showcasing our ability to deliver high-quality solutions tailored to specific client needs.`}
                 </p>
               </div>
             </div>
